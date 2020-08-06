@@ -42,7 +42,8 @@ public class LineRequest {
         return intervalTime;
     }
 
+    //TODO extraFare 붙이기
     public Line toLine() {
-        return new Line(name, color, startTime, endTime, intervalTime);
+        return new Line(name, color, startTime, endTime, intervalTime, 0);
     }
 }
