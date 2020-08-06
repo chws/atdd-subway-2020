@@ -38,7 +38,6 @@ public class SubwayPath {
         return lineStationEdges.stream().mapToInt(it -> it.getLineStation().getDistance()).sum();
     }
 
-    //TODO calculateFare 작성
     public int calculateTotalFare(List<Line> allLines) {
         List<Long> lineIds = getLineStationEdges()
             .stream()

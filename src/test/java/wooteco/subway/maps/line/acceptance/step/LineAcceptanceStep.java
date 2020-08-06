@@ -16,18 +16,18 @@ import org.springframework.http.MediaType;
 import wooteco.subway.maps.line.dto.LineResponse;
 
 public class LineAcceptanceStep {
-    public static ExtractableResponse<Response> 지하철_노선_등록되어_있음(String name, String color) {
-        return 지하철_노선_생성_요청(name, color);
+    public static ExtractableResponse<Response> 지하철_노선_등록되어_있음(String name, String color, String extraFare) {
+        return 지하철_노선_생성_요청(name, color, extraFare);
     }
 
-    public static ExtractableResponse<Response> 지하철_노선_생성_요청(String name, String color) {
+    public static ExtractableResponse<Response> 지하철_노선_생성_요청(String name, String color, String extraFare) {
         Map<String, String> params = new HashMap<>();
         params.put("name", name);
         params.put("color", color);
         params.put("startTime", LocalTime.of(05, 30).format(DateTimeFormatter.ISO_TIME));
         params.put("endTime", LocalTime.of(23, 30).format(DateTimeFormatter.ISO_TIME));
         params.put("intervalTime", "5");
-        params.put("extraFare", "100");
+        params.put("extraFare", extraFare);
 
         return RestAssured.given().log().all().
             contentType(MediaType.APPLICATION_JSON_VALUE).
