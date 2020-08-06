@@ -6,7 +6,7 @@
     - 경로 조회 기능 문서화
     - 기능 구현(TDD)
     
-- [ ] line마다 extrafare 적용
+- [x] line마다 extrafare 적용
 - [ ] fare 계산 시 extrafare의 우선순위 적용하기
     
 프론트
